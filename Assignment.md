@@ -2,7 +2,7 @@
 Bryan Cikatz  
 June 27, 2017  
 
-#Introduction
+# Introduction
 
 The purpose of this research is to get a greater understanding of beer production across the United States. Specifically, we have three critical questions to explore: 1) How does production capacity vary across states? 2) Do states have regional preferences (looking specifically at the median ABV and IBU in each state)? 3) Is there a relationship between the bitterness of beer and its alcoholic content? 
 
@@ -11,7 +11,7 @@ This research is based off of two data sets provided by management. The "Breweri
 In the interests of being thorough, I have expanded  upon the core three questions so that there are seven total questions that I have answered. Hopefully, the following section provides an adequate account of my work in the event that this research needs to be reproduced. 
 
 
-#Questions
+# Questions
 
 Note: I exported the Excel files into a csv format as I personally find it easier to import a csv file as opposed to an xlsx file. However, both the original xlsx files and the new csv files are stored in the Data folder. 
 
@@ -22,7 +22,7 @@ Breweries <- read.csv("C:/Users/Bryan/Documents/CaseStudy1/Data/Breweries.csv", 
 Beers <- read.csv("C:/Users/Bryan/Documents/CaseStudy1/Data/Beers.csv", header=TRUE, sep=",")
 ```
 
-#1. How many breweries are present in each state?
+# 1. How many breweries are present in each state?
 
 The "State" variable in the "Breweries" data set is a factor-variable so the summary function will report the frequency of breweries in each state. 
 
@@ -40,7 +40,7 @@ summary(Breweries$State)
 ```
 The breweries in each state range from 1 brewery in the District of Columbia, North Dakota, South Dakota, and West Virginia (each state has 1) to 47 breweries in Colorado.
 
-#2.  Merge beer data with breweries data by brewery id. Print ﬁrst 6 observations and the last six observations to check the merged ﬁle.
+# 2.  Merge beer data with breweries data by brewery id. Print ﬁrst 6 observations and the last six observations to check the merged ﬁle.
 
 The plyr package has the rename function that will be used to alter variable names. In the "Breweries" data set we need to rename "Brew_ID" to "Brewery_id" so it matches with the variable in the "Beers" data set. While optional, I also renamed the "Name" variable in each data set to something more distinct ("Name_Brewery" instead of "Name.x" and "Name_Beer" instead of "Name.y"). Using the merge function, we merge the data based on the shared variable "Brewery_id" (also making sure to bring along all variables). Finally, we use the head and tail functions to print the first and last observations.
 
@@ -98,7 +98,7 @@ tail(Merged_Data, 6)
 ```
 The first six observations all belong to NorthGate Brewing in Minnesota. The last six observations belong to Ukiah Brewing Company in California, Butternuts Beer and Ale in New York, and Sleeping Lady Brewing Company in Alaska.
 
-#3. Report the number of NA’s in each column.
+# 3. Report the number of NA’s in each column.
 
 Using the "Merged_Data" data set, we run the summary function on the logical function is.na. The is.na function looks at every observation returning a TRUE if there is a missing value and a FALSE if the value is present. The summary function gives you the total TRUE and FALSE for each variable. 
 
@@ -122,7 +122,7 @@ summary(is.na(Merged_Data))
 ```
 The only columns with missing values are ABV with 62 NA's and IBU with 1005 NA's.
 
-#4. Compute the median alcohol content and international bitterness unit for each state. Plot a bar chart to compare.
+# 4. Compute the median alcohol content and international bitterness unit for each state. Plot a bar chart to compare.
 
 The doBy package is needed to run the summaryBy function which allows us to find the median ABV and IBU for each state. The ggplot2 package is needed to run the ggplot function which is used to create two bar charts. One chart is the median ABV for each state while the other is the median IBU for each state. 
 
@@ -271,7 +271,7 @@ tail(IBU_ordered)
 ```
 The state with the beer with the highest alcohol content is Colorado at 12.8% alcohol by volume. The state with the most bitter beer is Oregon at 138 parts per million of isohumulone (units for IBU).
 
-#6. Summary statistics for ABV (Alcohol by volume) variable.
+# 6. Summary statistics for ABV (Alcohol by volume) variable.
 
 The summary function gives all the summary statistics for a numeric variable. For simplicity's sake, we made sure to only target the "ABV" variable in the "Merged_Data" data set.
 
@@ -285,7 +285,7 @@ summary(Merged_Data$ABV)
 ```
 The weakest beer is 0.1% alcohol by volume while the strongest beer is 12.8% ABV. The median is 5.6% alcohol by volume and the mean is 5.977% ABV.
 
-#7. Is there a relationship between the bitterness of the beer and its alcoholic content? Draw a scatter plot.
+# 7. Is there a relationship between the bitterness of the beer and its alcoholic content? Draw a scatter plot.
 
 We need to load the ggplot2 package so that we have access to the qplot function. With the qplot function, it is relatively straightforward to create a scatterplot with "IBU" on the x-axis and "ABV" on the y-axis. 
 
@@ -304,6 +304,6 @@ Scatterplot
 There appears to be a positive relationship between a beer's bitterness and its alcoholic content - in general, a beer with a higher IBU will most likely have a higher ABV.
 
 
-#Conclusion
+# Conclusion
 
 Analysis of the data sets revealed some interesting facts regarding beer production in the United States. First of all, the more populated states generally have more breweries. However, there are some states on the West Coast (Oregon and Colorado) that have a larger number of breweries relative to their population. It merits further research into why this is the case. Second, it appears that bitterness varies more across states than alcoholic content. For the most part, the medians for bitterness range from about 20 to 60 (with most states in the 30 to 50 range). The median alcoholic content ranges from about 4% to 6% (with most states in the 5% to 6% range). This difference in variance is probably because bitterness is far more dependent upon certain ingredients and so depends upon the specific type of beer. This is also an area that warrants further study. Third, there appears to be a positive relationship between a beer's bitterness and its alcoholic content - in general, as a beer's IBU increases, so does it ABV. Overall, the research serves as excellent preliminary work in that it provides solid general information while also identifying areas for further study.
