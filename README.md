@@ -6,7 +6,33 @@
 
 Submit the link to the ﬁle in GitHub via the space provided for in the Case Study 01 page in 2DS.
 
-Instructions Deliverable: Markdown ﬁle uploaded to GitHub containing the following
+## Description 
+Beers dataset contains a list of 2410 US craft beers and Breweries dataset contains 558 US breweries. The datasets descriptions are as follows.
+
+Beers.csv: Name: Name of the beer. Beer ID: Unique identiﬁer of the beer. ABV: Alcohol by volume of the beer. IBU: International Bitterness Units of the beer. Brewery ID: Brewery id associated with the beer. Style: Style of the beer. Ounces: Ounces of beer.
+
+Breweries.csv: Brew ID: Unique identiﬁer of the brewery. Name: Name of the brewery. City: City where the brewery is located. State: State where the brewery is located.
+
+## Questions
+
+1. How many breweries are present in each state?
+
+2. Merge beer data with breweries data by brewery id. Print ﬁrst 6 observations and the last six observations to check the merged ﬁle.
+
+3. Report the number of NA’s in each column.
+
+4. Compute the median alcohol content and international bitterness unit for each state. Plot a bar chart to compare.
+
+5. Which state has the maximum alcoholic beer? Which state has the most bitter beer?
+
+6. Summary statistics for ABV (Alcohol by volume) variable.
+
+7. Is there a relationship between the bitterness of the beer and its alcoholic content? Draw a scatter plot.
+
+You can use ggplot2 library for graphs. Please ignore missing values in your analysis. Comment on your analysis.
+
+## Instructions Deliverable: 
+Markdown ﬁle uploaded to GitHub containing the following
 
 a. Introduction to the project. The introduction should not start with For my project I .
 
