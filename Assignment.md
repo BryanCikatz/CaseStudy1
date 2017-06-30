@@ -206,7 +206,7 @@ ggplot(Medians, aes(y=IBU.median, x=State)) + geom_bar(stat="identity")
 
 The medians for alcohol content seem to be similar across states (ranging from about 4% to 6%). However, the medians for bitterness vary a lot more across states (ranging from about 20 IBU to about 60 IBU).
 
-#5. Which state has the maximum alcoholic beer? Which state has the most bitter beer?
+# 5. Which state has the maximum alcoholic beer? Which state has the most bitter beer?
 
 For both the ABV and IBU variables, the arrange function was used to order the column in ascending order. Then the subset function was used with !is.na in order to remove all missing values. Therefore, the tail function could be used to find the max value (simply the last value in the column).
 
