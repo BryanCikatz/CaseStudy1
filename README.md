@@ -47,6 +47,6 @@ e. Clear answers to the questions. Just the code to answer the questions is not 
 f. Conclusion to the project. Summarize your ﬁndings from this exercise. The ﬁle must be readable in GitHub. In other words, dont forget to keep the md ﬁle!!
 
 
-Note
+## Note
 
 R Markdown ﬁles often do not render graphics and output from R Markdown chunks in GitHub. Keep the MD (markdown) ﬁle and upload it along with the R Markdown ﬁle.
